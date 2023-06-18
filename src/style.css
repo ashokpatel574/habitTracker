@@ -251,3 +251,20 @@ li {
   transform: translate(-50%, -50%);
   background-color: #fff;
 }
+
+.displaydataModal-container,
+.displayModal-container {
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.displaydataModal-container.active,
+.displayModal-container.active {
+  display: block;
+}

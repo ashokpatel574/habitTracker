@@ -73,100 +73,102 @@ const HabitModal = () => {
   };
 
   return (
-    <div className="modal_container">
-      <h3>New Habit</h3>
-      <div className="modal_input-container">
-        <label>Habit Name</label>
-        <input
-          type="text"
-          className="habitName"
-          placeholder="Enter here"
-          value={habitInputName}
-          onChange={inputHandler}
-        />
-      </div>
-      <div className="modal_drop-container">
-        <div>
-          <label htmlFor="repeat">Repeat</label>
-          <select
-            id="repeat"
-            name="repeat"
-            onChange={habitPlanHandler}
-            value={habitPlan.repeat}
-          >
-            <option value="" disabled="disabled">
-              Choose habit repeat
-            </option>
-            {repeatState.map((item) => (
-              <React.Fragment key={item}>
-                <option value={item}>{item}</option>
-              </React.Fragment>
-            ))}
-          </select>
+    <div className={`displayModal-container ${modalOpen && "active"}`}>
+      <div className="modal_container">
+        <h3>New Habit</h3>
+        <div className="modal_input-container">
+          <label>Habit Name</label>
+          <input
+            type="text"
+            className="habitName"
+            placeholder="Enter here"
+            value={habitInputName}
+            onChange={inputHandler}
+          />
         </div>
-        <div>
-          <label htmlFor="goal">Goal</label>
-          <select
-            id="goal"
-            name="goal"
-            onChange={habitPlanHandler}
-            value={habitPlan.goal}
-          >
-            <option value="" disabled="disabled">
-              Choose goal
-            </option>
-            {goalState.map((item) => (
-              <React.Fragment key={item}>
-                <option value={item}>{item}</option>
-              </React.Fragment>
-            ))}
-          </select>
+        <div className="modal_drop-container">
+          <div>
+            <label htmlFor="repeat">Repeat</label>
+            <select
+              id="repeat"
+              name="repeat"
+              onChange={habitPlanHandler}
+              value={habitPlan.repeat}
+            >
+              <option value="" disabled="disabled">
+                Choose habit repeat
+              </option>
+              {repeatState.map((item) => (
+                <React.Fragment key={item}>
+                  <option value={item}>{item}</option>
+                </React.Fragment>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="goal">Goal</label>
+            <select
+              id="goal"
+              name="goal"
+              onChange={habitPlanHandler}
+              value={habitPlan.goal}
+            >
+              <option value="" disabled="disabled">
+                Choose goal
+              </option>
+              {goalState.map((item) => (
+                <React.Fragment key={item}>
+                  <option value={item}>{item}</option>
+                </React.Fragment>
+              ))}
+            </select>
+          </div>
         </div>
-      </div>
 
-      <div className="modal_drop-container">
-        <div>
-          <label htmlFor="workoutTime">Times of Day</label>
-          <select
-            id="workoutTime"
-            name="workoutTime"
-            onChange={habitPlanHandler}
-            value={habitPlan.workoutTime}
-          >
-            <option value="" disabled="disabled">
-              Choose time of day
-            </option>
-            {workoutTimeState.map((item) => (
-              <React.Fragment key={item}>
-                <option value={item}>{item}</option>
-              </React.Fragment>
-            ))}
-          </select>
+        <div className="modal_drop-container">
+          <div>
+            <label htmlFor="workoutTime">Times of Day</label>
+            <select
+              id="workoutTime"
+              name="workoutTime"
+              onChange={habitPlanHandler}
+              value={habitPlan.workoutTime}
+            >
+              <option value="" disabled="disabled">
+                Choose time of day
+              </option>
+              {workoutTimeState.map((item) => (
+                <React.Fragment key={item}>
+                  <option value={item}>{item}</option>
+                </React.Fragment>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label htmlFor="startDate">Start Date</label>
+            <select
+              id="startDate"
+              name="startDate"
+              onChange={habitPlanHandler}
+              value={habitPlan.startDate}
+            >
+              <option value="" disabled="disabled">
+                Choose Start date
+              </option>
+              {startDateState.map((item) => (
+                <React.Fragment key={item}>
+                  <option value={item}>{item}</option>
+                </React.Fragment>
+              ))}
+            </select>
+          </div>
         </div>
-        <div>
-          <label htmlFor="startDate">Start Date</label>
-          <select
-            id="startDate"
-            name="startDate"
-            onChange={habitPlanHandler}
-            value={habitPlan.startDate}
-          >
-            <option value="" disabled="disabled">
-              Choose Start date
-            </option>
-            {startDateState.map((item) => (
-              <React.Fragment key={item}>
-                <option value={item}>{item}</option>
-              </React.Fragment>
-            ))}
-          </select>
+        <div className="modal-btnContainer">
+          <button className="delete" onClick={habitModalClosehandler}>
+            Cancel
+          </button>
+          <button onClick={habitAddHandler}>Add</button>
         </div>
-      </div>
-      <div className="modal-btnContainer">
-        <button className="delete" onClick={habitModalClosehandler}>
-          Cancel
-        </button>
-        <button onClick={habitAddHandler}>Add</button>
       </div>
     </div>
   );
