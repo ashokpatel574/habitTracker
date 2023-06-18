@@ -1,0 +1,245 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  max-width: 120rem;
+  margin: 0 auto;
+  min-height: 100vh;
+  font-size: 1.8rem;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.header nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  font-size: 2rem;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.title {
+  width: 100%;
+  font-size: 2.4rem;
+  border-bottom: 1px solid #ccc;
+  margin: 0.5rem 0;
+}
+
+.habitBtn-container {
+  border-bottom: 1px solid #ccc;
+}
+
+.addHabitBtn {
+  font-size: 2.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  color: blue;
+  background-color: #fff;
+  margin: 1.5rem 0;
+  cursor: pointer;
+}
+
+.habitList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.habitListItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.8rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.habitListItem-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.habitListItem-btn span {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.archive-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  padding: 2rem;
+}
+
+.archive-container ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.8rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+}
+
+.home_container {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.modal_container {
+  position: absolute;
+  z-index: 50;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 45rem;
+  height: fit-content;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+  background-color: #fff;
+}
+
+.modal_input-container {
+  width: 100%;
+}
+
+.modal_input-container label,
+.modal_input-container input {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.8rem;
+}
+
+.modal_input-container input {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.modal_drop-container label,
+.modal_drop-container select,
+.modal_drop-container option {
+  display: inline-block;
+  width: 100%;
+  font-size: 1.8rem;
+}
+
+.modal_drop-container select {
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+}
+
+.modal_drop-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.modal_drop-container div {
+  width: 100%;
+}
+
+.modal-btnContainer {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+}
+
+.modal-btnContainer button {
+  font-size: 1.8rem;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+  color: blue;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.modal-btnContainer .delete {
+  color: red;
+}
+
+.displayhabitdata_container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.displayhabitdata_container p {
+  font-size: 1.75rem;
+}
+
+.habitListItem .name,
+.habitListItem .goal {
+  cursor: pointer;
+}
+
+.displayhabitdata {
+  max-width: 30rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border: 1px solid #ccc;
+  border-radius: 0.8rem;
+
+  position: relative;
+}
+
+.displayhabitdata span {
+  position: absolute;
+  top: 15%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
