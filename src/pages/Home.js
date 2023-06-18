@@ -4,7 +4,6 @@ import HabitModal from "../components/HabitModal";
 import DisplayHabitModal from "../components/DisplayHabitModal";
 
 const Home = () => {
-  const [displayModalData, setDisplayModalData] = useState(false);
   const {
     state: { habitData },
     dispatch,
@@ -13,6 +12,8 @@ const Home = () => {
     setEditHabit,
     setHabitInputName,
     setHabitPlan,
+    displayHabitData,
+    setDisplayHabitData,
   } = useData();
 
   const deleteHandler = (id) => {
@@ -45,12 +46,11 @@ const Home = () => {
   };
 
   const habitdataDisplayHandler = (id) => {
-    dispatch({
-      type: "showhabitData",
-      payload: id,
+    const getdata = habitData.find((item) => item.id === id);
+    setDisplayHabitData({
+      status: true,
+      data: { ...getdata },
     });
-
-    setDisplayModalData(!displayModalData);
   };
 
   const modalhandler = () => {
@@ -71,10 +71,8 @@ const Home = () => {
           Add Habit
         </button>
       </div>
+
       {modalOpen && <HabitModal />}
-      {/* {!displayModalData && (
-        <DisplayHabitModal state={{ displayModalData, setDisplayModalData }} />
-      )} */}
 
       <div>
         <ul className="habitList">
@@ -99,6 +97,8 @@ const Home = () => {
             );
           })}
         </ul>
+
+        {displayHabitData.status && <DisplayHabitModal />}
       </div>
     </section>
   );

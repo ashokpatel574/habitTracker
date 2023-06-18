@@ -1,28 +1,31 @@
 import React from "react";
 import { useData } from "../context/DataContext";
 
-const DisplayHabitModal = ({ state }) => {
-  const {
-    state: { displayHabitData },
-  } = useData();
+const DisplayHabitModal = () => {
+  const { displayHabitData, setDisplayHabitData } = useData();
 
-  const { displayModalData, setDisplayModalData } = state;
-
-  console.log(state);
+  const closeDisplayData = () => {
+    setDisplayHabitData({
+      status: false,
+      data: {},
+    });
+  };
 
   if (displayHabitData) {
-    const { name, goal, repeat, workoutTime } = displayHabitData;
+    const { name, goal, repeat, workoutTime } = displayHabitData.data;
 
     return (
-      <div className="displayhabitdata">
-        <span onClick={setDisplayModalData(!displayModalData)}>X</span>
-        <div className="displayhabitdata_container">
-          <p className="name">Activity: {name}</p>
-          <p>Activity repeat: {repeat} time Activity time</p>
-          <p>Goal: {goal}</p>
-          <p>Activity time: {workoutTime}</p>
+      <section className="displaydataModal">
+        <div className="displayhabitdata">
+          <span onClick={closeDisplayData}>X</span>
+          <div className="displayhabitdata_container">
+            <p className="name">Activity: {name}</p>
+            <p>Activity repeat: {repeat} time Activity time</p>
+            <p>Goal: {goal}</p>
+            <p>Activity time: {workoutTime}</p>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 };

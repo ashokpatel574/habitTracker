@@ -21,8 +21,6 @@ export const initialState = {
       archive: false,
     },
   ],
-
-  displayHabitData: {},
 };
 
 export const DataReducer = (state, action) => {
@@ -82,16 +80,6 @@ export const DataReducer = (state, action) => {
               : item
           ),
         ],
-      };
-    }
-
-    case "showhabitData": {
-      const getdata = state.habitData.find(
-        (item) => item.id === action.payload
-      );
-      return {
-        ...state,
-        displayHabitData: getdata,
       };
     }
 

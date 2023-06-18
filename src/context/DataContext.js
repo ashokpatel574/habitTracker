@@ -5,6 +5,10 @@ const DataContext = createContext();
 const DataContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(DataReducer, initialState);
   const [modalOpen, setModalOpen] = useState(false);
+  const [displayHabitData, setDisplayHabitData] = useState({
+    status: false,
+    data: {},
+  });
 
   const [habitInputName, setHabitInputName] = useState("");
   const [habitPlan, setHabitPlan] = useState({
@@ -31,6 +35,8 @@ const DataContextProvider = ({ children }) => {
         setHabitPlan,
         edithabit,
         setEditHabit,
+        displayHabitData,
+        setDisplayHabitData,
       }}
     >
       {children}
